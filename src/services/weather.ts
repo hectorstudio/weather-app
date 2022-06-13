@@ -5,6 +5,7 @@ import { generateQuery } from '../utils/string';
 const API_KEY = '';
 
 export const fetchCurrentCast = async (location: ILocation) => {
+  // @ts-ignore
   const query = generateQuery(location);
 
   try {
