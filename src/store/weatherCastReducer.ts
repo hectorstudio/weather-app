@@ -35,8 +35,8 @@ const weatherCastSlice = createSlice({
       state.loading = true;
     });
     // Success state for fetch Weather Cast data
-    builder.addCase(fetchCurrentCastByLocation.fulfilled, (state: WeatherCastState, action: { payload: { data: any[]; }; }) => {
-      const list: any[] = action.payload.data;
+    builder.addCase(fetchCurrentCastByLocation.fulfilled, (state: WeatherCastState, action: { payload: any }) => {
+      const list: any[] = action.payload;
       state.list = list;
       state.loading = false;
     });

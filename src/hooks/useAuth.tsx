@@ -1,6 +1,6 @@
 import { useState, createContext, useContext, useEffect } from "react";
 
-const API_KEY = '31b28e28feb7a4cfdcb33cf87412ce37';
+const API_KEY = 'b57c7bcac59b39cff79973afafaea67d';
 
 export interface IAuthObject {
   email: string;
