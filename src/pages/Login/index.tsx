@@ -50,7 +50,7 @@ const Login = () => {
             </div>
 
             <div className="mt-6">
-              <form action="#" method="POST" className="space-y-6">
+              <div className="space-y-6">
                 <div>
                   <label
                     htmlFor="email"
@@ -122,7 +122,7 @@ const Login = () => {
                     Sign in
                   </button>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
