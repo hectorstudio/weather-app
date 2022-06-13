@@ -17,7 +17,7 @@ const store = configureStore({
   reducer: reducers,
   devTools: process.env.NODE_ENV !== 'production',
   middleware: (getDefaultMiddleware) => {
-    if (process.env.NODE_ENV !== 'production') {
+    if (process.env.NODE_ENV !== 'production') { // Logs Redux Actions while development mode
       return getDefaultMiddleware(middlewareConfig).concat(logger);
     }
     return getDefaultMiddleware(middlewareConfig);

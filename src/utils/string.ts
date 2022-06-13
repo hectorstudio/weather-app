@@ -1,3 +1,4 @@
+// Convert Object into Plain URL query
 export const generateQuery = (obj: Record<string, string | undefined>): string => {
   let query = '';
 

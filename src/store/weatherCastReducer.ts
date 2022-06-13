@@ -12,6 +12,7 @@ const initialState: WeatherCastState = {
   loading: false
 };
 
+// Extra Reducer to fetch Current Weather Cast by Location
 export const fetchCurrentCastByLocation = createAsyncThunk('events/fetchCurrentCastByLocation', async (location: ILocation) => {
   const response = await fetchCurrentCast(location);
   return response.data;
@@ -29,14 +30,17 @@ const weatherCastSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    // Pending state for fetch Weather Cast data
     builder.addCase(fetchCurrentCastByLocation.pending, (state: WeatherCastState) => {
       state.loading = true;
     });
+    // Success state for fetch Weather Cast data
     builder.addCase(fetchCurrentCastByLocation.fulfilled, (state: WeatherCastState, action: { payload: { data: any[]; }; }) => {
       const list: any[] = action.payload.data;
       state.list = list;
       state.loading = false;
     });
+    // Failed state for fetch Weather Cast data
     builder.addCase(fetchCurrentCastByLocation.rejected, (state: WeatherCastState) => {
       state.loading = false;
     });
